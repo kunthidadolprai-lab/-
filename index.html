@@ -170,16 +170,16 @@
             });
             var popupContent = '<table>\
                     <tr>\
-                        <th scope="row">รายการ</th>\
-                        <td>' + (feature.properties['รายการ'] !== null ? autolinker.link(String(feature.properties['รายการ']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <th scope="row">ลำดับที่</th>\
+                        <td>' + (feature.properties['ลำดับที่'] !== null ? autolinker.link(String(feature.properties['ลำดับที่']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">แหล่งท่องเที่ยว</th>\
                         <td>' + (feature.properties['แหล่งท่องเที่ยว'] !== null ? autolinker.link(String(feature.properties['แหล่งท่องเที่ยว']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">ประเภท</th>\
-                        <td>' + (feature.properties['ประเภท'] !== null ? autolinker.link(String(feature.properties['ประเภท']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <th scope="row">ที่ตั้ง</th>\
+                        <td>' + (feature.properties['ที่ตั้ง'] !== null ? autolinker.link(String(feature.properties['ที่ตั้ง']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">ตำบล</th>\
@@ -194,16 +194,12 @@
                         <td>' + (feature.properties['จังหวัด'] !== null ? autolinker.link(String(feature.properties['จังหวัด']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">La</th>\
-                        <td>' + (feature.properties['La'] !== null ? autolinker.link(String(feature.properties['La']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <th scope="row">Latitude</th>\
+                        <td>' + (feature.properties['Latitude'] !== null ? autolinker.link(String(feature.properties['Latitude']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Long</th>\
-                        <td>' + (feature.properties['Long'] !== null ? autolinker.link(String(feature.properties['Long']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">URL Google Map</th>\
-                        <td>' + (feature.properties['URL Google Map'] !== null ? autolinker.link(String(feature.properties['URL Google Map']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <th scope="row">Logitude</th>\
+                        <td>' + (feature.properties['Logitude'] !== null ? autolinker.link(String(feature.properties['Logitude']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             var content = removeEmptyRowsFromPopupContent(popupContent, feature);
@@ -225,7 +221,7 @@
                 weight: 1,
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(234,53,69,1.0)',
+                fillColor: 'rgba(120,182,232,1.0)',
                 interactive: true,
             }
         }
@@ -254,7 +250,7 @@
         bounds_group.addLayer(layer__1);
         cluster__1.addTo(map);
         var overlaysTree = [
-            {label: '<img src="legend/_1.png" /> สถานที่ท่องเที่ยวจังหวัดอุตรดิตถ์ ', layer: cluster__1},
+            {label: '<img src="legend/_1.png" /> สถานที่ท่องเที่ยวจังหวัดสมุทรสาคร ', layer: cluster__1},
             {label: "Google Satellite", layer: layer_GoogleSatellite_0},]
         var lay = L.control.layers.tree(null, overlaysTree,{
             //namedToggle: true,
@@ -273,7 +269,7 @@
                 feature: layer.feature,
                 variables: {}
             };
-            layer.bindTooltip((layer.feature.properties['รายการ'] !== null?String('<div style="color: #4dff96; font-size: 10pt; font-family: \'SP Aftershock\', sans-serif;">' + layer.feature.properties['รายการ']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css__1'});
+            layer.bindTooltip((layer.feature.properties['แหล่งท่องเที่ยว'] !== null?String('<div style="color: #4dff96; font-size: 20pt; font-family: \'SP Aftershock\', sans-serif;">' + layer.feature.properties['แหล่งท่องเที่ยว']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css__1'});
             labels.push(layer);
             totalMarkers += 1;
               layer.added = true;
